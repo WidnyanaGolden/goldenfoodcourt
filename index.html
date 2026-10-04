@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Sour Sally Living World Denpasar: yogulato, collagen drink, dan smoothies yang creamy, fresh, dan lezat.">
     <title>Sour Sally Indonesia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap">
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
 
-<!-- JUDUL -->
-<header>
+<!-- BARU: progress bar scroll (CSS saja) -->
+<div class="progress" id="progress"></div>
+
+<!-- JUDUL / HERO -->
+<header class="hero">
+    <!-- BARU: bola-bola mengambang (dekorasi) -->
+    <span class="blob b1" aria-hidden="true"></span>
+    <span class="blob b2" aria-hidden="true"></span>
+    <span class="blob b3" aria-hidden="true"></span>
+
     <h1 class="judul">WELCOME TO SOUR SALLY INDONESIA</h1>
     <p class="tagline">Made To Melt Your Heart.</p>
+
+    <!-- BARU: tombol aksi -->
+    <div class="hero-cta">
+        <a class="btn btn-white" href="#menu">Lihat Menu</a>
+        <a class="btn btn-outline" href="https://wa.me/6285792047014" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+    </div>
 </header>
 
 <!-- NAVIGASI -->
@@ -26,7 +43,7 @@
 <main>
 
 <!-- HOME -->
-<section id="home">
+<section id="home" class="reveal">
     <h2 class="section-title">Sour Sally Living World Denpasar</h2>
 
     <p class="slogan">One Scoop, Endless Smiles.</p>
@@ -40,19 +57,48 @@
         Temukan rasa favoritmu dan buat harimu
         menjadi lebih manis bersama Sour Sally!
     </p>
+
+    <!-- BARU: kartu keunggulan -->
+    <div class="features">
+        <div class="feature">
+            <h3>Creamy</h3>
+            <p>Yogulato lembut yang meleleh di mulut.</p>
+        </div>
+        <div class="feature">
+            <h3>Fresh</h3>
+            <p>Rasa buah yang segar di setiap tegukan.</p>
+        </div>
+        <div class="feature">
+            <h3>Terjangkau</h3>
+            <p>Mulai dari Rp 52.000 saja.</p>
+        </div>
+    </div>
 </section>
 
 <!-- MENU -->
-<section id="menu">
+<section id="menu" class="reveal">
     <h2 class="section-title">OUR MENU</h2>
 
     <p class="menu-title">Menu Best Seller</p>
     <p class="menu-subtitle">Enjoy Our Best Seller Menu!</p>
 
+    <!-- BARU: filter kategori (CSS saja, memakai radio button tersembunyi + label) -->
+    <input class="fr" type="radio" name="f" id="f-all" checked>
+    <input class="fr" type="radio" name="f" id="f-yogulato">
+    <input class="fr" type="radio" name="f" id="f-collagen">
+    <input class="fr" type="radio" name="f" id="f-smoothies">
+
+    <div class="filters" role="group" aria-label="Filter menu">
+        <label class="filter" for="f-all">Semua</label>
+        <label class="filter" for="f-yogulato">Yogulato</label>
+        <label class="filter" for="f-collagen">Collagen</label>
+        <label class="filter" for="f-smoothies">Smoothies</label>
+    </div>
+
     <div class="menu-grid">
 
         <!-- YOGULATO -->
-        <div class="menu-col">
+        <div class="menu-col" data-cat="yogulato">
             <h3>Menu Yogulato</h3>
             <div class="table-wrap">
                 <table class="menu">
@@ -95,7 +141,7 @@
         </div>
 
         <!-- COLLAGEN -->
-        <div class="menu-col">
+        <div class="menu-col" data-cat="collagen">
             <h3>Menu Collagen</h3>
             <div class="table-wrap">
                 <table class="menu">
@@ -150,7 +196,7 @@
         </div>
 
         <!-- SMOOTHIES -->
-        <div class="menu-col">
+        <div class="menu-col" data-cat="smoothies">
             <h3>Menu Smoothies</h3>
             <div class="table-wrap">
                 <table class="menu">
@@ -184,11 +230,11 @@
 </section>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" class="reveal">
     <h2 class="banner">ABOUT SOUR SALLY</h2>
 
     <div class="about-img">
-        <img src="Soursally.jpg" alt="Sour Sally" loading="lazy">
+        <img src="soursally.jpg" alt="Sour Sally" loading="lazy">
     </div>
 
     <p class="about-quote">A little sweetness, a lot of happiness.</p>
@@ -207,7 +253,7 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="reveal">
     <h2 class="banner">CONTACT US</h2>
 
     <p class="contact-note">We'd love to accept your order</p>
